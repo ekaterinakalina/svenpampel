@@ -1,0 +1,132 @@
+<!-- Ekaterina Kalina,Webprogrammierung, MIB SS 22-->
+<!-- HTML Forms-->
+
+
+   <!DOCTYPE html>
+   <html lang="de">
+
+       <!--Meta-->
+       <head>
+           <meta charset="utf-8">
+           <title>Contact me</title>
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+       </head>
+
+       <body>
+           <!--Start Contact Info-->
+           <h1>Contact me</h1>
+           <section>
+                <h2>Contact info</h2>
+                <div id="contact_data_wrap">
+                    <ul class="contact_info">
+                        <li>
+                            <span class="icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                            <span class="contact_info_text">Dresden, Sachsen, Deutschland</span>
+                        </li>
+                        <li>
+                            <span class="icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <span class="contact_info_text">svenpampel@gmail.com</span>
+                        </li>
+                        <li>
+                            <span class="icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </span>
+                            <span class="contact_info_text">www.svenpampel.com</span>
+                        </li>
+                    </ul>
+               <h2>Follow me</h2>
+                    <ul class="social_media">
+                        <li>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                       </li>
+                       <li>
+                           <a href="#"><i class="fa-brands fa-artstation"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div><!--#contact_data_wrap-->
+            </section>
+            <!--End Contact Info-->
+
+           <!--Start Email form--> 
+           <form>
+               <fieldset>
+                   <label for="first_name">Name</label>
+                   <input id="first_name" type="text" size="30" maxlength="30" placeholder="Type your name"><br>
+                   <label for="phone_number">Phone number</label>
+                   <input id="phone_number" type="tel" size="30" maxlength="30" placeholder="Type your phone number"><br>
+                   <label for="email">Type your email address</label>
+                   <input id="email" type="email" size="30" maxlength="30" placeholder="Type your email address"><br>
+                   <label for="message_text">Your message</label>
+                   <textarea id="message_text" name="message_text" rows="4" cols="50" placeholder="Type your message here"></textarea><br>
+                   <input type="submit" value="Submit">
+               </fieldset>
+           </form><!--form-->
+           <!--End Email form--> 
+        
+           <!--Start Weitere Formulare--> 
+           <h2>Weitere Formulare</h2>
+
+           <form> <!--Farbauswahl--> 
+               <fieldset>
+                   <legend>Wähle die Farbe!</legend>
+                   <label for="white">white</label>
+                   <input id="white" type="radio" name="color">
+                   <label for="blue">blue</label>
+                   <input id="blue" type="radio" name="color">
+                   <label for="red">red</label>
+                   <input id="red" type="radio" name="color">
+               </fieldset>
+            </form>
+
+            <form> <!--Einfachauswahl--> 
+                <fieldset>
+                    <legend>Wähle ein Fisch!</legend>
+                    <select id="fisch">
+                        <option value="regenbogenfisch">Regenbogenfisch</option>
+                        <option value="wels">Wels</option>
+                        <option value="algenfresser">Algenfresser</option>
+                    </select>
+                </fieldset>
+            </form>
+
+            <form> <!--Mehrfachauswahl--> 
+                <fieldset>
+                    <label for="fisch_futter">Wähle Fischfutter!</label>
+                    <input id="fisch_futter" list="futter">
+                    <datalist id="futter">
+                        <option value="spinatsticks">Spinatsticks</option>
+                        <option value="granulat">Granulat</option>
+                        <option value="tabletten">Tabletten</option>
+                    </datalist>
+                </fieldset>
+            </form>
+
+            <form> <!--Range-->
+                <fieldset>
+                    <label for="range">Fischzufriedenheit</label>
+                    <span><i>hungrig</i></span>
+                    <input type="range" id="fish_mood" list="mood_steps" min="0" max="5" step="1">
+                    <datalist id="mood_steps">
+                        <option value="1" label="hunrig">hungrig</option>
+                        <option value="2" ></option>
+                        <option value="3" ></option>
+                        <option value="4" ></option>
+                        <option value="5" label="satt"></option>
+                    </datalist> 
+                    <span><i>satt</i></span>
+                </fieldset>
+            </form>
+            <!--End Weitere Formulare--> 
+
+            
+        <!-- Script FontAwsome icons-->
+        <script src="https://kit.fontawesome.com/49db892113.js" crossorigin="anonymous"></script>    
+       </body>
+</html>
