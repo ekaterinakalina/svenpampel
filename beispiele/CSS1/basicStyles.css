@@ -1,0 +1,93 @@
+/*
+Selektor{
+    Eigenschaft : Wert;
+    Eigenschaft : Wert;
+}
+*/
+
+/*
+Selektoren:
+Universal       *                   
+Typ              html, p, img
+Pseudoelement    ::after                   <before><everyElement><after>
+Klasse          .myClass            <p class="myClass">
+Pseudoklasse    :hover             <everyElement>
+Attribut        [title]             <h2 title="heading">
+id              #myId               <ul id="myId>
+*/
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+/*
+Nachfahren Leerstelle
+Kinder >
+*/
+#html:hover p{
+    background-color: hsl(240, 100%, 80%);
+}
+
+/*
+Längeneinheiten:
+absolute:
+px (Monitor), pt (Druck, pdf, ...)
+möglichst vermeiden, wenn dann kleine Werte
+oder für min- bzw. max-Größen
+
+relative:
+Bezug ist das Elternelement
+%, em
+für fast alle Elemente und Größen
+
+Bezug ist das Wurzelement
+rem
+insbesondere für fonts
+
+Bezug ist der viewport
+vw, vh
+für alles was vom Browserfenster (viewport abhängig sein soll)
+*/
+
+/* h1{
+    font-size: 10vw;
+} */
+
+
+:root{
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 1.3;
+}
+
+/* h1 könnte als statement auch vh oder vw als Einheit bekommen. */
+
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+h3,
+article{
+    font-size: 1.3rem;
+}
+
+/* 
+Farbeinheiten:
+
+websichere Farbnamen (bitte nicht verwenden)
+hex #FFF  #C0C0C0 shorthand immer verwenden!
+rgba(255,255,255,.5)
+hsla(255,100%,50%,.5)
+*/
+
+h1{
+    background-color: #ff000050;
+    background-color: rgb(255, 150, 0);
+    background-color: hsla(0,100%,50%,1);
+}

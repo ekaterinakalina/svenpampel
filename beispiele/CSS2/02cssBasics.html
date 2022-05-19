@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Basics</title>
+        <link rel="stylesheet" href="styles/02cssBasicsDoz.css">
+    </head>
+    <body>
+        <h1>CSS Basics</h1>
+        <nav>
+            <ul>
+                <li><a href="#aufbau">Aufbau</a></li>
+                <li><a href="#farben">Farben</a></li>
+                <li><a href="#Variablen">Variablen</a></li>
+                <li><a href="#Schriftaufbau">Schriftaufbau</a></li>
+                <li><a href="#blockInline">Block vs Inline</a></li>
+                <li><a href="#margPad">Margins und Paddings</a></li>
+                <li><a href="#box-sizing">box-sizing</a></li>
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h2>Skalierbare Schriften</h2>
+                <p>Die Einheiten vw (viewport width) und vh (viewport height) 
+                    sind von der Bildschirmgröße abhängig.
+                    Verwenden Sie diese Einheit für besondere Statements.
+                </p>
+            </article><article id="aufbau">
+                <h2>Aufbau eines Stylesheets</h2>
+                <p>Grundsätzlich sollte ein Stylesheet so aufgebaut sein, daß die Spezifitätsregeln ungefähr die sequentielle Abarbeitung abbilden.
+                    D.h. Selektoren mit niedriger Spezifität kommen an den Anfang des Stylesheets und solche mit höchster Spezifität werden am Ende notiert.
+                </p>
+                <p>Allgemeine Regeln und vererbbare Proerties werden zu Beginn des Stylesheets vereinbart,
+                 so daß sie teils an späterer Stelle durch spezifischere Regeln überschrieben werden können.
+                </p>
+            </article>
+            <article id="farben">
+                <h2>Farben</h2>
+                <p>Folgende Möglichkeiten der Farbdarstellung sind im CSS erlaubt:</p>
+                <ul>
+                    <li>Hexadezimal</li>
+                    <li>RGB</li>
+                    <li>HSL</li>
+                </ul>
+            </article>
+            <article id="blockInline">
+                <h2>Block- und Inlineelemente</h2>
+                <p>Jedes Element ist per default eine rechteckige Box mit folgenden Bestandteilen:</p>
+                <ul>
+                    <li>content (width und height)</li>
+                    <li>padding (Innenabstand)</li>
+                    <li>border (Rahmen)</li>
+                    <li>margin (Außenabstand)</li>
+                </ul>
+                <p>Blockelemente nehmen per default 100% des Elternelementes ein.</p>
+                <p>Inline-Elemente nehmen nur den tatsächlich benötigten Raum ein und lassen andere Elemente neben sich zu.
+                    Sie können keine <code>width</code> und keine vertikalen <code>margin</code> erhalten.
+                </p>
+                <p>Ein Inline-Block-Element kann das property width bekommen
+                    und vertikale margin und es kann andere Elemente neben sich erlauben.
+                </p>
+            </article>
+            <article id="box-sizing">
+                <h2>Das box-sizing Property</h2>
+                <p>Das box-sizing ist die Grundlage für die Größenberechnung von Blockelementen.
+                    Es stehen u.a. die folgenden zwei Werte zur Verfügung:
+                </p>
+                <ul>
+                    <li>border-box</li>
+                    <li>content-box</li>
+                </ul>
+                <h2>Größenberechnung</h2>
+                <p><strong>border-box</strong><br>
+                    tatsächliche Breite = width + 2 * margin
+                </p>
+                <p><strong>content-box</strong><br>
+                    tatsächliche Breite = width + 2 * margin + 2 * border + 2 * padding
+                </p>
+                <p>Das box-sizing sollte für alle Elemente gleich sein und wird deshalb im Universal Selektor notiert. So kann es später auch für einzelne Elemente überschrieben werden.</p>
+            </article>
+            <article id="bsp-block-inline">
+                <h2>Beispiel für display: block | inline</h2>
+                <div>
+                    <em>betont</em>
+                    <strong>sehr wichtig</strong>
+                </div>
+            </article>
+            <article id="bsp-box-sizing">
+                <h2>Beispiel für das box-sizing</h2>
+                <div>border-box</div>
+                <div>content-box</div>
+                <p>Betrachte die Größenunterschiede!</p>
+                <p>Bei der Verwendung von border-box können padding und border in der Größe variert werden, ohne daß die Gesamtgröße beeinflußt wird.</p>
+            </article>
+            <article id="bsp-seiten">
+                <h2>Box-Properties für alle bsp-seiten</h2>
+                <p>Alle Box-Properties können für die Seiten einzeln oder gruppiert angesprochen werden.</p>
+                <div>vier Seiten</div>
+                <h3>Skalierbare Einheiten</h3>
+                <p>vw und vh</p>
+            </article>
+        </main>
+    </body>
+</html>

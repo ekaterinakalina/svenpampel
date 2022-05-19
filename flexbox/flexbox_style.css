@@ -1,0 +1,79 @@
+/*------------------------ Alle Elemente ------------------*/
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+/*-------- Wurzeleinstellungen, globale Variablen ---------*/
+:root {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    /** var colours: bessere Lesbarkeit **/
+    --light-blue-font: hsl(213, 44%, 85%);
+    --orange-hover: hsl(28, 100%, 50%);
+    --blue-background: hsl(213, 97%, 39%);
+    --blue-main:hsl(214, 50%, 48%);
+}
+/*--------------------- Body: Styles ---------------------*/
+body {
+    margin: 0;
+    background-color: var(--blue-background);
+    color: var(--light-blue-font);
+}
+/*----------------------- Header -------------------------*/
+header {                            /** Header Flexbox **/
+    margin: 0 auto;
+    display: flex; 
+    flex-flow: row wrap;            /** flex-direction | flex-wrap; dank "wrap" - responsive ohne @media **/
+    justify-content: space-around;  /** X-Achse **/ 
+    align-items: center;            /** Y-Achse **/ 
+} 
+header h1{                          /** responsive header **/
+    margin-right: 1em;              
+    font-size: 7rem;
+    text-align: right;              /** Text nach rechts **/
+    flex: 1 0 100%;                 /** flex-items, shorthand: flex-grow | flex-shrink | flex-basis; **/
+}
+/*---------------------- Navigation ----------------------*/
+nav { 
+    position: sticky;               /** nav immer sichtbar **/
+    top: 0;  
+}
+nav ul {                            /** Nav Flexbox **/
+    display: flex;                /** alle Kinder von "ul" werden als Reihe angezeigt **/
+    flex-flow: row wrap;            /** flex-direction | flex-wrap; dank "wrap" - responsive ohne @media **/
+    justify-content: space-evenly;  /** X-Achse **/ 
+    align-items:center;             /** Y-Achse **/ 
+    align-content:space-around;     /** Raum zwischen den Zeilen **/
+    list-style: none;
+    height: 10em;                   /** Raum von "nav"**/
+} 
+/*------------------------ Links ------------------------*/
+nav li { 
+    flex: 0 1 25em;                 /** flex-items, shorthand: flex-grow | flex-shrink | flex-basis; **/
+}
+:any-link{                          /** ":any-link" - Einstellugen fuer alke Links **/
+    text-decoration: none;   
+    font-size: 1.2rem;
+    color: var(--light-blue-font);
+}
+nav a:hover{                        /** hover **/
+    color: var(--orange-hover);
+}
+/*---------------------- Main (leer) --------------------*/
+main {
+    width: 100vw;
+    height: 90vh;
+    background: linear-gradient(90deg, #22c1c3, #fdbb2d);
+    /**background-color: var(--blue-main);**/
+}
+/*------------------------ Footer -----------------------*/
+footer{
+    width: 100vw;                   /** footer: Raum **/
+    height: 10vh;
+    background-color: var(--blue-background);
+}
+footer p { 
+    margin: 0;                      /** kein Abstand zwischen Main/Footer **/
+    text-align: center;
+    font-size: 1rem;
+}

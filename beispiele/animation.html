@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>CSS Animation</title>
+<style>
+.ufo img{
+    width: 10%;
+}
+
+.ufo { 
+    background-color:blue;
+    position: relative;
+    animation-name: ufo_fly;
+    animation-duration: 10s;
+    animation-delay: 5s;;
+    animation-timing-function: ease;
+    animation-iteration-count: 3;
+    animation-direction:alternate;
+}
+
+/**Animation shorthand**/
+/**animation: ufo_fly 10s ease 5s 3 alternate**/
+
+@keyframes ufo_fly {
+    0% {left: 0px; top: 0px}
+    25% {left: 300px; top: 0px;}
+    50% {left: 300px; top: 300px;} /**"left" bleibt 300px, sonst fliegt das Ufo schräg!**/
+    75% {left: 300px; top: 0px;}
+    100% {left: 500px; top: 0px;}
+}
+</style>
+</head>
+<body>
+    <div class="ufo">
+        <img src="https://res.cloudinary.com/dskvgobc1/image/upload/v1652748959/russiantopics/ufo_ayii2x.svg" alt="ufo">
+    </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* Allgemeine Angaben und niedrige Spezifität */
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+/* Allgemeine Angaben, und alles was vererbt werden soll */
+
+/* Schriftenaufbau in Abhängigkeit zum Wurzelelement */
+:root{
+    font-family: sans-serif;
+    font-size: .7rem;
+    line-height: 1.5;
+    
+    /* Deklaration von globalen Variablen (custom properties) */
+    --main-hue: 240;
+    --main-color: hsla(var(--main-hue), 100%,50%,1);
+    --bg-color-dark: hsla(var(--main-hue), 100%,80%,1);
+    --bg-color-light: hsla(var(--main-hue), 100%,90%,1);
+}
+
+/* ********************* fonts **************************** */
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.7rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+/* Für den Unterschied von rem zu em und % ändern Sie die Einheit für die font-size. */
+div,
+nav,
+ul,
+p,
+li,
+a{
+    font-size: 1.5rem;
+}
+
+/* ************************** colors *********************** */
+
+article:nth-of-type(odd){
+    background-color: var(--bg-color-light);
+}
+
+article:nth-of-type(even){
+    background-color: var(--bg-color-dark);
+}
+
+/* ************************** margins und % als Einheit *********************** */
+/* body{
+    background-color: hsla(0,100%,100%,1);
+} */
+
+/* html,
+body, */
+h1{
+    background-color: var(--bg-color-light);
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    width: max-content; 
+    padding: 2%;
+}
+
+/* ************************** block vs inline *********************** */
+/* 
+Probieren Sie alle display-Werte aus und beobachten Sie den Unterschied
+article{
+    display: inline;
+    display: inline-block;
+    display: block;
+    width: 100%;
+}
+
+code{
+    background-color: hsla(0,100%,50%,1);
+    width: 100%;
+    margin: 10%;    
+} */
+
+/* Verändern Sie hier den display-Wert und beobachten Sie den Unterschied in width und margin */
+#bsp-block-inline em{
+    display: block;
+    background-color: hsla(0,100%,100%,1);
+    width: 50%;
+    margin: 5%;
+}
+
+
+
+
+/* ************************** box-sizing *********************** */
+/* Berechnungsgrundlage für die Breite*/
+div:first-of-type{
+    box-sizing: border-box;
+}
+
+div:last-of-type{
+    box-sizing: content-box;
+}
+/* Breite */
+div{
+    background-color: var(--bg-color-dark);
+    margin: 2.5%;
+    padding: 2.5%;
+    border: 5px dashed;
+    width: 50%;
+} 
+
+
+/* ************************** box-eigenschaften *********************** */
+
+#bsp-seiten>div{
+    text-align: center;
+    width: max-content;
+    margin: auto;
+
+    /* alle vier Seiten gleich */
+    padding: 15%;
+    /* oben-unten, rechts-links */
+    padding: 15% 5%;
+    /* oben, rechts-links, unten */
+    padding: 20% 10% 5%;
+    /* oben, rechts, unten, links */
+    padding: 0 5% 10% 20%;
+
+    border-top: 1px solid hsla(0,100%,50%,1);
+    border-right: 2px dashed hsla(240, 100%,50%,1);
+    border-bottom: 4px dotted hsla(0,100%,100%,1);
+    border-left: none;
+
+    /* border: 5px solid hsl(0, 100%, 50%); */
+} 
+
+
+
+
+
+/* ************************** skalierbare fonts *********************** */
+/* #bsp-seiten p:last-of-type{
+    font-size: 5vw;
+} */
+/* Verändern Sie die Breite des Browserfensters und die Schrift wächst mit */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

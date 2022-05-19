@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Media Queries</title>
+        <link rel="stylesheet" href="styles/02rwdMediaQueries.css">
+    </head>
+    <body>
+        <h1>Media Queries</h1>
+        <main>
+            <article>
+                <h2>Media Queries</h2>
+                <p>With media queries we can ask for certain types of output and additional features.
+                    Depending on those we can change styles for these features.<br>
+                    Media Queries are stylesheets within stylesheets.
+                </p>
+                <p>
+                    Only the rules within the media query are changing. 
+                    Everything else stays the same.
+                </p>
+            </article>
+            <article>
+                <h2>Features</h2>
+                <p>Look at the stylesheet for this document.
+                    Use the develper tools to inspect what's happening.
+                </p>
+                <p>You can test lots of things with attributes:</p>
+                <ul>
+                    <li><code>width</code><br>
+                    the viewport width</li>
+                    <li><code>height</code><br>
+                    the viewport height</li>
+                    <!-- the following will be deprecated in Media Queries Level 4: 
+                    <li><code>device-width</code><br>
+                    the viewport width of the specific device</li>
+                    <li><code>device-height</code><br>
+                    the viewport height of the specific device</li> -->
+                    <li><code>orientation</code><br>
+                    landscape or portrait orientation of the device</li>
+                    <li><code>aspect-ratio</code><br>
+                    the ration of width to height</li>
+                </ul>
+                <p>The are many more conditions to test.
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" target="-blank">
+                    Read on Media Queries</a>.
+                </p>
+            </article>
+            <article>
+                <h2>Using device pixels</h2>
+                <p>Pixels are relative! Compare the resolution of your desktop and your phone.
+                    CSS-pixels are rendered on your device. If you develop on your desktop and make your viewport smaller or larger,
+                    it's still on your desktop! It won't work on a handheld device.
+                </p>
+                <p>Use your meta-tag to set the CSS-width equal to the device-width.</p>
+            </article>
+            <article>
+                <h2>Syntax</h2>
+                <p>
+<pre>
+<code>@media type (features){
+    /*rules for thes features*/
+}
+</code>
+</pre>          If you don't include a type it will target to all types (screen, print, ...)<br>
+                For the features, mostly you will ref a certain width.<br>
+                <code>min-width</code> mean from this width and larger, 
+                so it's for a larg(er) screen. <code>max-width</code> works the other way around.
+                You can also work within a range between min-width and max-width.
+                </p>
+                <p>
+                Working with <code>min-width</code> means you are working desktop-first.
+                The order of media queries is important! If you work with <code>min-width</code>,
+                you work from the smallest to the biggest.
+                </p>
+                <p><em>Try the whole stylesheet mobile-first!</em></p>
+            </article>
+            <article>
+                <h2>Organizing media queries within a stylesheet</h2>
+                <p>There is no right or wrong way to organize media queries.
+                    Be consistent! You can write all rules within one media query or you can write a media query just after each separate rule that needs one.
+                </p>
+            </article>
+            <article>
+                <h2>Mobile design</h2>
+                <ul>
+                    <li>use up your space</li>
+                    <li>use one column</li>
+                    <li>make forms usable</li>
+                    <li>make fonts larger</li>
+                    <li>look at your contrast</li>
+                </ul>
+            </article>
+            <article>
+                <h2>Breakpoints</h2>
+                <p>
+                    Breakpoints are the width at which we want to change the design.<br>
+                    Don't use standard breakpoints. 
+                    Better, look at the screen and decide at what point does the layout look wrong.
+                    It depends on your design. Try different breakpoints.
+                    Don't target specific devices, because there are just too many.
+                </p>
+                <p>
+                    For maintainability keep the breakpoints to a minimum.
+                    The more breakpoints you have, the more adjustments you have to make, 
+                    if you are making changes to on breakpoint.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

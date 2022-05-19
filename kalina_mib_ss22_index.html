@@ -1,0 +1,178 @@
+<!--Ekaterina Kalina, MIB SS 22-->
+<!--Projektthema: persönliche Webseite mit Portfolio-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>     
+<!--Start Meta-->
+    <meta charset="utf-8">
+    <!-- charset gehört als erstes Element in den head - DONE-->
+    <title>Sven Pampel Website</title>
+
+    <!-- CSS -->
+    <!--Es wurde normalize.css eingebunden, damit alle Elemente identisch von allen Browsern gerendert werden-->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+</head><!--head-->
+<!--End Meta-->
+
+<body>
+    <!--Start Nav-->
+    <nav>
+        <ul>
+            <li><a href="services.html">Leistungen</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav><!--nav-->
+    <!--End Nav-->
+
+    <main>
+    <!--Start Header-->
+    <header>
+        <h1>Ich bin Sven</h1>
+        <h3>Filmeditor & Motion Designer</h3>
+        <form id="hire_me">   
+            <!--Dem Button (und den weiteren) wurde ein 
+            Label durch den Attribut "aria-label" gegeben, damit der Text 
+            nicht im Interface zu sehen ist-->
+            <input  id="button_kontakt" type="button" aria-label="Hire me" name="hire me" value="Hire me">
+        </form>
+        <figure>
+            <img src="/images/profil.png" alt="Sven Pampel">
+        </figure>
+    </header><!--#header-->
+    <!--End Header-->
+
+
+    <!--Start Leistungen-->
+    <section id="services">
+        <article>
+            <h2>Leistungen</h2>
+            <!-- DIVS sind erstmal entfernt - DONE-->
+                <h3>Videoschnitt, Ton & Motion Design</h3>
+                <p>...Arbeit mit Adobe-Familie: Adobe Premiere, Adobe AfterEffects, Adobe Photoshop, Adobe Media Encoder, InDesign</p>
+        </article>
+
+        <article>            
+                <h3>Kameramann</h3>
+                <p>...bei Presseterminen, Stadtfesten, Konzerten, Theaterstücken, medienpädagogischen Projekten (Panasonic, JVC, Canon) in Sachsen</p>
+        </article>
+
+        <article>
+                <h3>Fotografie und Redakteur</h3>
+                <p>...für Landkreis Bautzen, Sächsische Zeitung, Lausitzer Rundschau und andere regionale Zeitungen</p>
+        </article>
+
+        <article>
+                <h3>Layout & Zeichnen</h3>
+                <p>...bei Jugendmagazin, Amtsblatt</p>
+        </article>
+    </section><!--#"services"-->
+    <!--End Leistungen-->
+   
+
+    <!--Start Portfolio-->
+    <section>
+        <article>
+            <h2>Portfolio</h2>
+        </article>
+      <!--in Bearbeitung--> 
+    </section>
+    <!--End Portfolio-->
+  
+
+    <!--Start About -->
+    <section id="about">
+        <article>
+            <h2>About me</h2>
+            <p> <br> Ich heisse Sven Pampel und hier stelle ich meine Projekte vor.
+            <br>Videoschnitt/Filmediting, MotionDesign sind die Themen, für die ich brenne und durche vielseitge Erafahrung regelmäßig vertiefe.
+            <br>Sie finden mich im Raum Dresden, Sachsen. 
+            </p>
+        <!-- id-werte müssen einmal sein - DONE -->
+        <form>
+            <input id="button_portfolio" type="button" aria-label="Portfolio" name="portfolio" value="Portfolio">
+            <input id="button_cv"        type="button" aria-label="CV"        name="cv"        value="CV">
+        </form>
+        </article><!--#about--> 
+    </section>
+    <!--End About-->
+
+
+    <!--Start Contact Info-->
+     <div id="contact_data_wrap">
+        <h2>Contact me</h2>
+         <!-- Auch die Klassen sind hier überflüssig. - DONE -->
+         <ul>
+             <li>
+                 <span>
+                     <i class="fa-solid fa-location-dot"></i>
+                 </span>
+                 <span class="contact_info_text">Dresden, Sachsen, Deutschland</span>
+             </li>
+             <li>
+                 <span>
+                     <i class="fa-solid fa-envelope"></i>
+                 </span>
+                 <span class="contact_info_text">svenpampel@gmail.com</span>
+             </li>
+             <li>
+                 <span>
+                     <i class="fa-solid fa-globe"></i>
+                 </span>
+                 <span>www.svenpampel.com</span>
+             </li>
+         </ul>
+ 
+         <h3>Follow me</h3> 
+         <ul>
+             <li class="social_network">
+                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </li>
+            <li class="social_network">
+                <a href="#"><i class="fa-brands fa-artstation"></i></a>
+             </li>
+             <li class="social_network">
+                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
+             </li>
+         </ul>
+     </div><!--#contact_data_wrap-->
+    <!--End Contact Info-->
+
+    <!--Start Email form--> 
+    <form>
+        <fieldset>
+            <label  for="first_name">Name</label>
+            <input  id="first_name" type="text" size="30" maxlength="30" placeholder="Type your name"><br>
+            <label  for="phone_number">Phone number</label>
+            <input  id="phone_number" type="tel" size="30" maxlength="30" placeholder="Type your phone number"><br>
+            <label  for="email">Email</label>
+            <input  id="email" type="email" size="30" maxlength="30" placeholder="Type your email address"><br>
+            <label  for="message_text">Your message</label>
+            <textarea id="message_text" name="message_text" rows="4" cols="50" placeholder="Type your message here"></textarea><br>
+            <input   type="submit" value="Submit">
+        </fieldset>
+    </form><!--form-->
+    <!--End Email form--> 
+    </main><!--main-->
+
+    <!--Start Footer-->
+    <footer>
+        <p>Copyright © 2022</p>
+    </footer><!--#footer-->
+    <!--End Footer-->
+
+    <!-- Script FontAwesome icons-->
+     <script src="https://kit.fontawesome.com/49db892113.js" crossorigin="anonymous"></script>    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Flexbox</title>
+		<link rel="stylesheet" href="styles/06flex.css">
+	</head>
+	<body>
+		<h1>Flexbox</h1>
+		<nav>
+			<ul>
+				<li><a href="#flexbox">flexbox</a></li>
+				<li><a href="#axis">axis</a></li>
+				<li><a href="#container">flex-container properties</a></li>
+				<li><a href="#item">flex-item properties</a></li>
+			</ul>
+		</nav>
+		<main>
+			<article id="flexbox">
+				<h2>flexbox</h2>
+				<p>flexbox is a one dimensional layout tool for single Elements, or the whole document. It is set on an element, which is the <strong>flex-container</strong> by <code>display: flex</code> and it makes all direct children to <strong>flex-items</strong>. Flex-items can than be arranged in column or in row.</p>
+			</article>
+			<article id="axis">
+				<h2>Setting the axes</h2>
+				<p>With <code>display: flex | inline-flex</code> you make the element itself to a flex-container and all direct children to flex-items. Within the flex-container there are two axes, the <strong>main-axis</strong> and the <strong>cross-axis</strong>. The axes are important for setting all directions properties, because they are not assigned horizontally or vertically but to main- and cross-axis.</p>
+			</article>
+			<article id="container">
+				<h2>flex-container</h2>
+				<ul>
+					<li><code>display</code></li>
+					<li><code>flex-direction</code></li>
+					<li><code>flex-wrap</code></li>
+					<li><code>justify-content</code></li>
+					<li><code>align-items</code></li>
+					<li><code>align-content</code></li>
+				</ul>
+				<div>
+					<p>The properties on the flex-container treat all flex-items alike.</p>
+					<p><code>display</code> sets the flex-container, which can be block (flex) or inline (inline-flex).</p>
+					<p><code>flex-direction</code> sets the axes. The value <code>row</code> is default and sets the main-axis horizontal and the cross-axis vertical. You can make single-line-containers or multi-lined with <code>wrap</code>. Both properties should be used as shorthand: <strong><code>flex-flow</code></strong></p>
+					<p><code>justify-content</code> aligns all flex-items along the main-axis. <code>align-items</code> aligns them along the cross-axis, over a single line.</p>
+					<p><code>align-content</code> aligns the flex-items along the cross axis, but only in multi-lined containers with enough space along the cross-axis.</p>
+				</div>
+			</article>
+			<article id="item">
+				<h2>flex-items</h2>
+				<ul>
+					<li><code>flex-grow</code></li>
+					<li><code>flex-shrink</code></li>
+					<li><code>flex-basis</code></li>
+					<li><code>self-align</code></li>
+					<li><code>order</code></li>
+				</ul>
+				<div>
+					<p>With these properties you can align each flex-item itself and different from the other flex-items.</p>
+					<p>With <code>flex-grow</code> you can let the flex-item grow bigger along the main-axis, if there is space. The values are positive integers and they can be used as proportions.</p>
+					<p>Use <code>flex-shrink</code> analog to flex-grow.</p>
+					<p>With <code>flex-basis</code> you set the initial size of the flex-item.</p>
+					<p>It is best practice to use the shorthand <code>flex</code> for all three properties, even if you don't need to use them all.</p>
+				</div>
+			</article>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+*{
+	font-family: sans-serif;
+	color: hsla(240,100%,50%,1);
+}
+
+li{
+	color: hsla(0,100%,50%,1);
+}
+
+.farbe{
+	color: hsla(90,100%,50%,1);
+}
+
+[title]{
+	color: hsla(180,100%,50%,1);
+}
+
+/*Fahren Sie mit der Maus über alle Elemente, der inline-style lässt sich nicht überschreiben.*/
+:hover{
+	color: hsla(45,100%,50%,1);
+}
+
+#hoheSpezifitaet{
+	color: hsla(270,100%,50%,1);
+}
+
+
+/*Ändern Sie die Reihenfolge der Regeln.
+Die Farben ändern sich nicht, es erfolgt also keine sequenzielle Abarbeitung.*/

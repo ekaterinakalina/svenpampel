@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS3 Basics</title>
+        <link rel="stylesheet" href="styles/03cssPosition.css">
+    </head>
+    <body>
+        <h1>CSS3 Basics</h1>
+        <nav>
+            <ul>
+                <li><a href="#position">Beschreibung</a></li><li><a href="#static">static</a></li><li><a href="#relative">relative</a></li><li><a href="#absolute">absolute</a></li><li><a href="#fixed">fixed</a></li><li><a href="#sticky">sticky</a></li>
+            </ul>
+        </nav>
+        <main>
+            <article id="position">
+                <h2>Beschreibung</h2>
+                <p>Das position-property dient der Ausrichtung von einzelnen Elementen.
+                    Es ist nicht dafür gedacht eine Gesamtlayout zu erzeugen.
+                    Die Werte des position-Properties sind wie folgt.
+                </p>
+                <ul>
+                    <li><code>static</code></li>
+                    <li><code>relative</code></li>
+                    <li><code>absolute</code></li>
+                    <li><code>fixed</code></li>
+                    <li><code>sticky</code></li>
+                </ul>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning">https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning</a>
+            </article>
+            <article id="static">
+                <h2>position: static</h2>
+                <p>Dieser Wert ist der default.
+                    Das Element befindet sich wie im HTML-Dokument aufgelistet im Textfluß, 
+                    alle anderen Elemente respektieren seinen Platz und seine Position.
+                </p>
+            </article>
+            <article id="relative">
+                <h2>position: relative</h2>
+                <p>Das Element befindet sich im Textfluß und kann zusätzlich mit den Properties 
+                    <code>top</code>, <code>right</code>, <code>bottom</code> und/oder <code>left</code> verschoben werden.
+                    Die Verschiebung nimmt als Bezug die Ausgangsposition und der ursprüngliche Platz wird reserviert und freigehalten.
+                </p>
+                <p>
+                    Das property wird oft verwendet, um als Bezugspunkt für absolute positionierte Elemente zu dienen.
+                    Dann sind i.d.R. top, right, bottom und left überflüssig.
+                </p>
+            </article>
+            <article id="absolute">
+                <h2>position: absolute</h2>
+                <p>Das Element wird aus dem Textfluß entfernt und von Folgeelementen und Elternelementen ignoriert, die seinen Platz einnehmen.
+                    Zusätzlich schrumpft es auf seine tatsächliche Größe. 
+                    Es wird zum Block-Element und kann deshalb eine width zugewiesen bekommen.
+                </p>
+                <p>
+                    Das Element kann mit den Properties 
+                    <code>top</code>, <code>right</code>, <code>bottom</code> und/oder <code>left</code> verschoben werden.
+                    Bezugspunkt für die Verschiebung ist hier der nächste Vorfahre, der selbst positioniert ist, also nicht static.
+                </p>
+            </article>
+            <article id="fixed">
+                <h2>position: fixed</h2>
+                <p>
+                    Das Element verhält sich wie ein absolute positioniertes Element, 
+                    lediglich der Bezug für eine Verschiebung ist jetzt immer der viewport.
+                </p>
+                <p>
+                    Das Element bleibt fixiert an einer Stelle im viewport, die mit top, right, bottom und left festgelegt ist.
+                </p>
+            </article>
+            <article id="sticky">
+                <h2>position: sticky</h2>
+                <p>
+                    Das Element verhält sich relative, bis zu einem gegebenen offset, dann verhält es sich wie fixed.
+                </p>
+            </article>
+            <article>
+                <h2>Beispiele für das position-Property</h2>
+                <figure>
+                    <img src="pics/html5.png" alt="HTML5 Logo">
+                    <figcaption>position Beispiele</figcaption>
+                </figure>
+            </article>
+        </main>
+    </body>
+</html>

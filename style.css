@@ -1,0 +1,150 @@
+/*--------------------- Alle Elementen ---------------------*/
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+/*--------------------- Wurzeleinstellungen: globale Variablen ---------------------*/
+:root {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+/*--------------------- Body: Styles ---------------------*/
+body {
+	background-color: #035BC5;
+    color: #c9d8ea;
+    margin: 0;
+}
+main > section:nth-child(even){/*<section> haben verschiedene Farben*/
+    background-color: 	hsl(213, 97%, 35%);
+}
+/*--------------------- Header ---------------------*/
+header {
+    padding-top: 4rem;
+    padding-left: 12rem;
+}
+/*--------------------- Einzelne Artikel, Footer ---------------------*/
+#about, #services, #contact_data_wrap, article, footer { 
+    padding: 2.5rem;
+    text-align: center;
+}
+
+/*-- Dasselbe wie "main > section:nth-child(even){
+    background-color: 	hsl(213, 97%, 35%);"
+}
+#services, #about, footer {
+    background-color: 	hsl(213, 97%, 35%);
+    padding: 2.5rem;
+}--*/
+
+footer{
+    background-color: hsl(213, 97%, 35%);
+}
+footer p { 
+    font-size: 1rem;
+}
+/*--------------------- Headings, Text ---------------------*/
+h1 {
+    font-size: 7rem;
+    line-height: 1;
+}
+h2 {
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+}
+h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 0.5;
+}
+p {
+    font-size: 1.5rem;
+    color: 	hsl(213, 44%, 70%)
+}
+/*--------------------- Navigation ---------------------*/
+nav {
+    padding-top: 1.5rem;
+    padding-right: 5rem;
+    text-align: right;
+}
+nav li {
+    display: inline;
+    padding: 1.5rem;
+}
+a{
+    text-decoration: none;   
+    font-size: 1.2rem;
+    color: #f6faff;
+}
+ul {
+    list-style: none;
+}
+/*--------------------- Buttons ---------------------*/
+[type=submit],[type=button]{ /*** Buttons allgemein ***/
+    display: inline-block;
+    background-color: hsl(28, 100%, 50%) !important;
+    color:#f6faff;
+    font-weight: bold;
+    border-radius: 4%;
+    font-size: 1rem;
+}
+fieldset [type=submit] { /*** Formular Submit ***/
+    padding: 2%;
+    margin: 2% 0 0 8%;
+}
+#button_kontakt,#button_portfolio, #button_cv { /*** Hire me, Portfolio, CV ***/
+    position: relative;
+    padding: 0 0 0 0;
+    width: 13%;
+    height: 3em;
+    margin: 2% 0 3% 0%;
+}
+/*--------------------- Formularfeld ---------------------*/
+#contact_data_wrap { /*** Kontaktdaten ***/
+    text-align: left;
+    margin-left: 3.5em;
+}
+#contact_data_wrap li {
+    font-size: 115%;
+    color: 	hsl(213, 44%, 70%);
+    padding: 1.5%;
+}
+#contact_data_wrap li.social_network { /*** Social Networks ***/
+    display: inline;
+}
+#contact_data_wrap a {
+    opacity: 70%;
+}
+#contact_data_wrap h2 { /*** Headings ***/
+    text-align: center;
+}
+#contact_data_wrap h3 {
+    padding-left: 4%;
+    color: #c9d8ea;
+}
+#contact_data_wrap h4 {
+    color: #c9d8ea;
+    font-weight: bolder;
+}
+fieldset, label, input {  /*** Abstand zwischen den Feldern ***/
+    display: inline-block;
+    border: none;
+    margin: 0 0 8% 0;
+    padding: 0 1% 1% 7%;
+}
+textarea {
+    margin-left: 8%;
+}
+/*--------------------- Bild ---------------------*/
+figure {
+    align-items: center;
+    border: 2px hsl(28, 40%, 50%) solid;
+    padding: 0 0 0 0;
+    margin: 0 62% 0 0;
+    max-width: fit-content;
+}
+figure img{
+    padding: 20% 0 0 2%;
+}
+
+
+

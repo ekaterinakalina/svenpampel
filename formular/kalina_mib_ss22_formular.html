@@ -1,4 +1,4 @@
-<!-- Ekaterina Kalina,Webprogrammierung, MIB SS 22-->
+<!-- Ekaterina Kalina,Webprogrammierung, MIB SS 22, VERSION 2-->
 <!-- HTML Forms-->
 
 
@@ -12,34 +12,35 @@
            <meta name="viewport" content="width=device-width, initial-scale=1">
        </head>
 
+       <!-- Verzichten Sie auf die section. - DONE -->
        <body>
            <!--Start Contact Info-->
            <h1>Contact me</h1>
-           <section>
                 <h2>Contact info</h2>
                 <div id="contact_data_wrap">
-                    <ul class="contact_info">
+                    <!-- Auch die Klassen sind hier überflüssig. - DONE -->
+                    <ul>
                         <li>
-                            <span class="icon">
+                            <span>
                                 <i class="fa-solid fa-location-dot"></i>
                             </span>
                             <span class="contact_info_text">Dresden, Sachsen, Deutschland</span>
                         </li>
                         <li>
-                            <span class="icon">
+                            <span>
                                 <i class="fa-solid fa-envelope"></i>
                             </span>
                             <span class="contact_info_text">svenpampel@gmail.com</span>
                         </li>
                         <li>
-                            <span class="icon">
+                            <span>
                                 <i class="fa-solid fa-globe"></i>
                             </span>
-                            <span class="contact_info_text">www.svenpampel.com</span>
+                            <span>www.svenpampel.com</span>
                         </li>
                     </ul>
                <h2>Follow me</h2>
-                    <ul class="social_media">
+                    <ul>
                         <li>
                             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                        </li>
@@ -51,7 +52,6 @@
                         </li>
                     </ul>
                 </div><!--#contact_data_wrap-->
-            </section>
             <!--End Contact Info-->
 
            <!--Start Email form--> 
@@ -110,23 +110,26 @@
 
             <form> <!--Range-->
                 <fieldset>
-                    <label>for="range">Fischzufriedenheit</label>
-                    <span><i>hungrig</i></span>
-                    <input type="range" id="fish_mood" list="mood_steps" min="0" max="5" step="1">
+                    <!-- Hier bekomme ich einen Fehler vom validator. For und id müssen sich entsprechen. - DONE -->
+                    <label for="range">Fischzufriedenheit:</label>
+                    <!-- Verzichten Sie auf das i und lesen Sie in der HTML-Dokumentation dazu.- DONE, 
+                        gelesen: https://developer.mozilla.org/de/docs/Web/HTML/Element/em -->
+                    <span>hungrig</span>
+                    <input type="range" id="range" list="mood_steps" min="0" max="5" step="1">
                     <datalist id="mood_steps">
-                        <option value="1" label="hunrig">hungrig</option>
+                        <option value="1" label="hungrig">hungrig</option>
                         <option value="2" ></option>
                         <option value="3" ></option>
                         <option value="4" ></option>
                         <option value="5" label="satt"></option>
                     </datalist> 
-                    <span><i>satt</i></span>
+                    <span>satt</span>
                 </fieldset>
             </form>
             <!--End Weitere Formulare--> 
 
             
-        <!-- Script FontAwsome icons-->
+        <!-- Script FontAwesome icons-->
         <script src="https://kit.fontawesome.com/49db892113.js" crossorigin="anonymous"></script>    
        </body>
 </html>
