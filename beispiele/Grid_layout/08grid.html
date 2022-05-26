@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>display: grid</title>
+		<link rel="stylesheet" href="styles/08gridDoz.css">
+	</head>
+	<body>
+		<h1>display: grid</h1>
+		<nav>
+			<ul>
+				<li><a href="#grid">Das Grid</a></li>
+				<li><a href="#gridContainer">Der Grid-Container</a></li>
+				<li><a href="#gridItem">Die Grid-Items</a></li>
+				<li><a href="#gridPropsContainer">Die Properties für den Grid-Contaier</a></li>
+				<li><a href="#gridPropsItem">Die Properties für die Grid-Items</a></li>
+			</ul>
+		</nav>
+		<main>
+			<article id="grid">
+				<h2>Das Grid</h2>
+				<p>Eins</p>
+				<p>Das grid ist ein zweidimensionales Layout-Tool. Nach der Deklaration eines Grid-Containers können Grid-Items sowohl in Zeile als auch in Spalte angelegt werden. Die Reihenfolge der Elemente im Stylesheet kann vollkommen unabhängig von der Reihenfolge derselben Elemente im HTML-Dokument festgelegt werden.</p>
+				<h3>Grid Vokabeln</h3>
+				<ul>
+					<li>row</li>
+					<li>column</li>
+					<li>area</li>
+					<li>line</li>
+				</ul>
+			</article>
+			<article id="gridContainer">
+				<h2>Der Grid-Container</h2>
+				<p>Zwei</p>
+				<p>Mit <code>display: grid</code> wird der Grid-Container deklariert. Alle direkten Kinder sind Grid-Items und können nun im Grid platziert werden.</p>
+				<p>Im Grid-Container müssen die rows, columns und/oder die areas festgelegt werden. Erst dann können die Grid-Items platziert werden.</p>
+			</article>
+			<article id="gridItem">
+				<h2>Die Grid-Items</h2>
+				<p>Drei</p>
+				<p>Die Items können überall im Grid platziert werden, unabhängig von ihrer Position im HTML-Dokument. Werden Sie nicht explizit platziert, dann werden Sie gemäß der Reihenfolge im HTML-Dokument aufgelistet.</p>
+			</article>
+			<article id="GridPropsContainer">
+				<h2>Properties im Grid-Container</h2>
+				<p>Vier</p>
+				<ul>
+					<li><code>grid-template-rows</code></li>
+					<li><code>grid-template-columns</code></li>
+					<li><code>grid-template-areas</code></li>
+					<li><code>grid-column-gap</code></li>
+					<li><code>grid-row-gap</code></li>
+					<li><code>grid-gap</code></li>
+					<li><code>justify-items (row)</code></li>
+					<li><code>align-items (column)</code></li>
+					<li><code></code>place-items (row and column)</li>
+				</ul>
+			</article>
+			<article id="gridPropsItem">
+				<h2>Properties für Grid-Items</h2>
+				<ul>
+					<li><code>grid-column-start</code></li>
+					<li><code>grid-column-end</code></li>
+					<li><code>grid-row-start</code></li>
+					<li><code>grid-row-end</code></li>
+					<li><code>span</code></li>
+				</ul>
+			</article>
+			<footer>
+				<h2>Hilfreiche Links</h2>
+				<ul>
+					<li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks: Guide to Grid</a></li>
+					<li><a href="https://www.mediaevent.de/css/grid.html">Media Event: CSS Grid </a></li>
+				</ul>
+			</footer>
+		</main>
+
+	</body>
+</html>

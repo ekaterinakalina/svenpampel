@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before{
+	box-sizing: border-box;
+}
+
+html,
+body{
+	font-family: sans-serif;
+	font-size: 16px;
+	width: 90%;
+	margin: auto;
+}
+
+/*Allgemeine Angaben für die einzelnen Container.*/
+article{
+	background: hsla(0,0%,80%,1);
+}
+
+#nav{
+	background: hsla(240,30%,70%,1);
+}
+
+#nav>*{
+	background: hsla(60,50%,50%,1);
+}
+
+/*Für das Gesamtlayout wird der body zum grid-container.
+Innerhalb des Containers befinden sich sieben Elemente, die Überschrift und sechs article.*/
+body{
+	display: grid;
+	/*Nachdem das grid angelegt ist, müssen Spalten und/oder Zeilen angelegt werden.*/
+	
+	/*Entkommentieren Sie die folgenden Regeln nacheinander.*/
+	
+	/*Die folgende Regel legt drei gleichgroße Spalten fest und verteilt die Elemente gemäß ihrer Reihenfolge im HTML-Dokument.*/
+	/*grid-template-columns: 1fr 1fr 1fr;*/
+	
+	/*Dasselbe erreicht die folgende Regel mit der repeat-Funktion.*/
+	/*grid-template-columns: repeat(3,1fr);*/
+	
+	/*repeat funktioniert auch mit unterschiedlichen Spaltenkombinationen.
+	Nachfolgend werden vier Spalten angelegt,
+	nämlich 2 mal 2fr und 1fr*/
+	/*grid-template-columns: repeat(2,2fr 1fr);*/
+	
+	/*Kommentieren Sie alle obigen grid-template-columens wieder aus und wir beginnen neu.*/
+	grid-template-columns: repeat(3,1fr);
+	
+	/*Wir haben jetzt 3 Spalten und damit 4 grid-lines.*/
+	grid-gap: 1em;
+}
+
+h1{
+	/*Die Überschrift soll sich über alle drei Spalten erstrecken.*/
+
+	grid-column-start: 1;
+	grid-column-end: 4;
+
+	/*alternativ:
+	grid-area ist die Kurzform für grid-row-start, grid-column-start, grid-row-end and grid-column-end*/
+/*	grid-area: 1/1/1/4*/
+}
+
+/*Die Navigation soll auch über alle Spalten reichen und nach oben gerückt werden.
+Die nav selbst können wir nicht ansprechen, weil sie kein grid-item ist. Aber den Container drumherum, den article*/
+#nav{
+grid-area: 2/1/2/4;
+}
+
+/*Grid-areas können auch benannt angelegt werden. Dafür werden wir den eben platzierten article selbst zum grid-container machen und darinnen areas für die Überschrift und die links anlegen.
+Ein Punkt legt eine leere Zelle an.*/
+#nav{
+
+	display: grid;
+	grid-template-areas: ". . headline"
+											 "nav nav nav nav";
+
+
+}
+
+/*Jetzt werden die grid-items platziert.*/
+#nav>h2{
+grid-area: headline;
+}
+nav{
+grid-area: nav
+}
+
+/*Dasselbe nocheinmal innerhalb der nav.*/
+nav ul{
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-areas: "link1 link2 link3"
+											 "link4 link5 link6";
+}
+
+nav li:last-of-type{
+grid-area: link6;
+}
+
+/*Responsive design mit grid.
+Ziehen Sie den viewport horizontal kleiner und achten Sie auf den letzten article.*/
+
+/*Letzter article wird über die gesamte Breite gezogen.*/
+article:last-of-type{	
+	grid-column-start: 1;
+	grid-column-end: 4;
+	/*article wird selbst zum grid-container*/
+	display: grid;
+	/*Columns werden flexibel angelegt.*/
+    grid-template-columns: repeat(auto-fit,minmax(15em,1fr));
+}
+
+article:last-of-type>p{
+	background: hsla(0,0%,100%,1);
+	margin: 2%;
+}

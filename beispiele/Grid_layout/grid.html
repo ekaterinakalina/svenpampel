@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<title>display:flex</title>
+		<link rel="stylesheet" href="grid.css">
+	</head>
+	<body>
+		<h1>display:grid</h1>
+		<article>
+			<h2>Grundlagen</h2>
+			<div>
+				<p>Der Wert <code>grid</code> ist für das Gesamtlayout eines HTML-Dokumentes vorgesehen. Selten werden einzelne Komponenten eines Dokumentes damit ausgzeichnet. Die Ausrichtung ist innerhalb eines Containers im Gegensatz zur Flex-Box zweidimensional. D.h. es können Spalten und Zeilen gleichzeitig angelegt werden. Auch das grid ist sehr gut für responsive Webdesign nutzbar.</p>
+				<p>Auch grid ist eine Eltern-Kind-Beziehung und reicht nur eine Ebene tief.<code>display:grid</code> legt den grid-Container an und alle direkten Kinder werden zu Grid-Items.</p>
+			</div>
+		</article>
+		<article>
+			<h2>Vokabeln</h2>
+			<ul>
+				<li>grid-container<br>
+				Eltern-Container, der mit <code>display:grid </code>festgelegt wird. </li>
+				<li>grid-items<br>
+				alle direkten Nachfahren des grid-containers</li>
+				<li>grid-row<br>
+				Zeilen, die im grid-container angelegt werden, mit <code>grid-template-rows</code></li>
+				<li>grid-column<br>
+				Spalten, die im grid-container angelegt werden, mit <code>grid-template-columns</code></li>
+				<li>grid-area<br>
+				Zellen, die über mehrere rows oder columns reichen, angelegt über <code>grid-template-areas</code></li>
+				<li>grid-line<br>
+				die Trennlinien zwischen rows und columns, beginnend mit 1 vor der ersten row bzw. column. Jede row bzw. column hat zwei grid-lines</li>
+				<li>grid-gap<br>
+				der Abstand zwischen zwei Zeilen bzw. Spalten.</li>
+			</ul>
+		</article>
+		<article id="nav">
+			<h2>Beispiel: Navigation</h2>
+			<nav>
+				<ul>
+					<li>Link 1</li>
+					<li>Link 2</li>
+					<li>Link 3</li>
+					<li>Link 4</li>
+					<li>Link 5</li>
+				</ul>
+			</nav>
+		</article>
+		<article>
+			<h2>grid-column-template</h2>
+			<p>Mit dem grid kommt eine neue Einheit, die fraction (fr). Die fr ist ähnlich dem property flex: grow shrink basis aus dem Flex-Modul zu verwenden. Sie nutzt den zur Verfügung stehenden Platz aus, im Verhältnis zu benachbarten grid-items.
+			</p>
+		</article>
+		<article>
+			<h2>Platzieren der grid-items</h2>
+			<p>
+			Grid-items platzieren sich automatisch innerhalb des grid-containers von oben nach unten und von links nach rechts.
+			</p>
+			<p>
+			Allerdings ist es auch möglich jedes einzelne grid-item explizit innerhalb des grids zu platzieren, unabhängig von seiner Position im HTML-Dokument. Auf diese Weise kann ein semantisch geordnetes HTML-Dokument existieren, die Anordnung kann jedoch vollkommen anderen Design-Regeln folgen. 
+			</p>
+		</article>
+		<article>
+			<h2>responsive design mit grid</h2>
+			<p>
+			Die drei p-Elemente sollen nebeneinander auf dem großen Bildschirm platziert sein und untereinander auf dem kleinen.
+			</p>
+			<p>
+			Dafür verwenden wir die repeat-Funktion in Verbindung mit der column-Antzahl auto-fill und der minmax-Funktion.
+			</p>
+			<p>
+			<code>grid-template-columns: repeat(auto-fill,minmax(20em,1fr));</code>
+			</p>
+			<p>
+			Also:
+			Lege wiederholend soviele Spalten an wie in den Container passen, mit einer Mindestbreite von 20em und einer Höchstbreite von 1fr.
+			</p>
+		</article>
+	</body>
+</html>

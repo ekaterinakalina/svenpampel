@@ -14,10 +14,10 @@ body {
     color: #c9d8ea;
     margin: 0;
 }
-main > section:nth-child(even){/*<section> haben verschiedene Farben*/
+main > section:nth-child(even){                     /**<section> haben verschiedene Farben**/
     background-color: 	hsl(213, 97%, 35%);
 }
-/*--------------------- Header ---------------------*/
+/*------------------------- Header -----------------------*/
 header {
     padding-top: 4rem;
     padding-left: 12rem;
@@ -60,7 +60,7 @@ p {
     font-size: 1.5rem;
     color: 	hsl(213, 44%, 70%)
 }
-/*--------------------- Navigation ---------------------*/
+/*----------------------- Navigation -----------------------*/
 nav {
     padding-top: 1.5rem;
     padding-right: 5rem;
@@ -75,10 +75,13 @@ a{
     font-size: 1.2rem;
     color: #f6faff;
 }
-ul {
+ul li {
     list-style: none;
 }
-/*--------------------- Buttons ---------------------*/
+ul i {
+    margin-left: -2em;                              /** zentriert icons **/
+}
+/*------------------------ Buttons -----------------------*/
 [type=submit],[type=button]{ /*** Buttons allgemein ***/
     display: inline-block;
     background-color: hsl(28, 100%, 50%) !important;
@@ -87,11 +90,11 @@ ul {
     border-radius: 4%;
     font-size: 1rem;
 }
-fieldset [type=submit] { /*** Formular Submit ***/
-    padding: 2%;
-    margin: 2% 0 0 8%;
+fieldset [type=submit] {                            /** Formular Submit **/
+    padding: 1em;
+    margin: 2em 0 0 42em;
 }
-#button_kontakt,#button_portfolio, #button_cv { /*** Hire me, Portfolio, CV ***/
+#button_kontakt,#button_portfolio, #button_cv {     /** Hire me, Portfolio, CV **/
     position: relative;
     padding: 0 0 0 0;
     width: 13%;
@@ -99,42 +102,38 @@ fieldset [type=submit] { /*** Formular Submit ***/
     margin: 2% 0 3% 0%;
 }
 /*--------------------- Formularfeld ---------------------*/
-#contact_data_wrap { /*** Kontaktdaten ***/
-    text-align: left;
-    margin-left: 3.5em;
+#contact_data_wrap {                                /** Kontaktdaten **/
+    text-align: center;                             /** zentriert den Formulartext **/
 }
 #contact_data_wrap li {
     font-size: 115%;
     color: 	hsl(213, 44%, 70%);
     padding: 1.5%;
 }
-#contact_data_wrap li.social_network { /*** Social Networks ***/
-    display: inline;
+#contact_data_wrap li.social_network {              /** Social Networks **/
+    display: inline;                                /** in der Reihe anzeigen **/  
 }
 #contact_data_wrap a {
     opacity: 70%;
 }
-#contact_data_wrap h2 { /*** Headings ***/
-    text-align: center;
-}
-#contact_data_wrap h3 {
-    padding-left: 4%;
+#contact_data_wrap h3 {                             /** Headings **/
     color: #c9d8ea;
 }
-#contact_data_wrap h4 {
+#contact_data_wrap h4 {                             /** Headings **/
     color: #c9d8ea;
     font-weight: bolder;
 }
-fieldset, label, input {  /*** Abstand zwischen den Feldern ***/
-    display: inline-block;
+fieldset, label, input {                            /** Abstand zwischen den Formularfeldern **/
+    display:inline-block;
+    position:relative;
     border: none;
-    margin: 0 0 8% 0;
-    padding: 0 1% 1% 7%;
+    margin: 0 0 2em 38em;
+    padding: 0 1% 1% 5%;
 }
 textarea {
-    margin-left: 8%;
+    margin-left: 37em;
 }
-/*--------------------- Bild ---------------------*/
+/*-------------------------- Bild -------------------------*/
 figure {
     align-items: center;
     border: 2px hsl(28, 40%, 50%) solid;

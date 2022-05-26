@@ -1,0 +1,272 @@
+/*------------------------ Alle Elemente ------------------*/
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+/*-------- Wurzeleinstellungen, globale Variablen ---------*/
+:root {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    --light-blue-font: hsl(213, 44%, 85%);                  /** var colours: bessere Lesbarkeit **/
+    --orange-hover: hsl(28, 90%, 53%);
+    --orange-button: hsl(26, 100%, 50%);
+    --blue-background: hsl(213, 97%, 39%);
+    --dark-blue-background: hsl(213, 97%, 35%);
+}
+/*---------------------- body, html ----------------------*/
+body {
+    margin: 0;
+    background-color: var(--blue-background);
+    color: var(--light-blue-font);
+    min-height: 100vh;
+}
+html {
+	min-height: 100%;  
+} 
+/*---------------------- Body Grid ---------------------*/
+body{
+    display: grid;
+    grid: 
+    '. . nav nav'
+    'header header . .  '
+    'main main main main'
+    'footer footer footer footer';
+    justify-items: center;
+
+} 
+nav {grid-area: nav;}                                        /** grid Variablen body **/
+header {grid-area: header;}  
+main {grid-area: main;}  
+footer {grid-area: footer;}
+
+/*----------------------- Header ------------------------*/
+header {                                                    /** Header Flexbox **/
+    margin: 0 auto;
+    display: flex; 
+    flex-flow: row wrap;                                    /** flex-direction | flex-wrap; dank "wrap" - responsive ohne @media **/
+    justify-content:left;                                   /** X-Achse **/ 
+    align-items:flex-start;                                 /** Y-Achse **/ 
+    padding: 3em;
+} 
+header h1{                                                  /** responsive header h1**/           
+    font-size: 7rem;
+    text-align: left;                                       
+    flex: 1 0 100%;                                         /** flex-items, shorthand: flex-grow | flex-shrink | flex-basis; **/
+    margin-left: 0.5em;
+}
+header h2{                                                  /** responsive header h2**/
+    margin-left: 1.5em;             
+    font-size: 2.5rem;
+    text-align: left;                                       
+    flex: 1 0 100%;                                         /** flex-items, shorthand: flex-grow | flex-shrink | flex-basis; **/
+}
+
+/*---------------------- Navigation ----------------------*/
+nav { 
+    position: sticky;                                       /** nav immer sichtbar **/
+    top: 0;  
+}
+nav ul {                                                    /** Nav Flexbox **/
+    display: flex;                                        /** alle Kinder von "ul" werden als Reihe angezeigt **/
+    flex-flow: row wrap;                                    /** flex-direction | flex-wrap; dank "wrap" - responsive ohne @media **/
+    justify-content: space-evenly;                          /** X-Achse **/ 
+    align-items:center;                                     /** Y-Achse **/ 
+    align-content:space-around;                             /** schafft Raum zwischen den Zeilen **/
+    list-style: none;
+    height: 10em;                                           /** Raum von "nav"**/
+} 
+/*------------------------ Links --------------------------*/
+nav li { 
+    flex: 0 1 2em;                                          /** flex-items, shorthand: flex-grow | flex-shrink | flex-basis; **/
+    padding: 2em;
+}
+:any-link{                                                   /** ":any-link" - Einstellugen fuer alle Links **/
+    text-decoration: none;   
+    font-size: 1.2rem;
+    color: var(--light-blue-font);
+}
+nav a:hover{                                                 /** Links nav hover **/
+    color: var(--orange-hover);
+}
+/*------------------------- Main --------------------------*/
+main {
+    width: 100vw;
+    max-width: 100%;
+    height: 90vh;
+    text-align: center;
+}
+main > section {                                              /** Mehr Raum in <sections> **/
+    padding: 4em;
+}
+article h3, p {                                               /** Mehr Raum zwischen den h3 Überschriften und den Textzeilen **/
+    padding: 0.8em;
+}
+main > section:nth-child(odd){                                /** <sections> haben abwechselnde Farben**/
+    background-color: var(--dark-blue-background);
+}
+/*------------------------- Buttons -------------------------*/
+#button_portfolio, #button_cv, #submit {    
+    background-color: var(--orange-button) !important;        /** !important Anweisung überschreibt**/       
+    max-width: fit-content;                                   /** Buttons entsprechen der Größe des Inhaltes**/
+    max-height: fit-content;
+    flex: 1 0 100%;                           
+    color:#f6faff;
+    border-radius: 0.5em; 
+    font-weight: bold;
+    font-size: 1rem;
+    text-align:center;
+    padding: 1.5em;
+    margin: 2em 0 0 42em;
+}
+#button_cv {                                                   /** verschiebt CV-Button näher zum Portfolio**/   
+    margin-left: 0;      
+}
+#button_portfolio, #button_cv {                                /** schafft Abstand zwischen den Buttons**/
+    margin: 0.5em;
+}
+/*------------------------- @media -------------------------*/
+@media only screen and (max-width: 425px) {                    /** für kleine mobile Geräte**/
+    nav li {
+        margin: -2em;
+    }
+    nav ul{
+        transform: translateX(14em);
+    }
+    main section {
+        width: 140vw;
+        max-width: 140%;
+    }
+    main > section:nth-child(odd){                    
+        background-color: var(--dark-blue-background);
+        border-radius: 0.8em;
+    }
+    #services h3 {
+       font-size: 1.5rem;
+    }
+    .contact_wrap h2, li {
+        text-align: left;
+    }
+    .contact_wrap span{
+        font-size:xx-small;
+        font-weight: bold;
+    }
+    .email_wrap{
+        transform: translate(11em,-0.5em);
+    }
+    .email_wrap #first_name, #phone_number, #email {
+        margin-left: 22em;
+    }
+    .email_wrap label{
+        padding-left: 20em;
+    }
+    #text_wrap {
+        margin-left: 4.5em; 
+    }
+    .email_wrap textarea {
+        width: 20em;
+        max-width: 100%;
+        height: 15em;
+        max-height: 100%;
+    }
+    .email_wrap #submit {
+        margin-top: -0.5em;
+        margin-left: 14.2em;
+    }
+}
+  
+/*---------------------- Headings, Text -----------------------*/
+h1 {
+    font-size: 7rem;
+    line-height: 1;
+    flex: 1 0 100%;
+}
+h2 {
+    font-size: 4rem;
+    letter-spacing: 0.2em;
+    flex: 1 0 100%; 
+}
+h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 0.5;
+    flex: 1 0 100%; 
+}
+p {
+    font-size: 1.5rem;
+    color: 	hsl(213, 44%, 70%);
+    flex: 1 0 100%; 
+}
+/*------------------------ Formularfeld Grid ------------------------*/
+#contact_data_wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(1em, 1fr));         /** schafft 2 Reihen **/
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "contact_wrap email_wrap email_wrap email_wrap"
+    "follow_wrap email_wrap email_wrap email_wrap ";
+}
+#contact_data_wrap .contact_wrap {grid-area: contact_wrap;}     /** grid Variablen Formularfeld**/
+#contact_data_wrap .follow_wrap {grid-area: follow_wrap;}
+#contact_data_wrap .email_wrap {grid-area: email_wrap;}
+
+.contact_wrap li {                                              /** Daten im Feld "Contact me"**/
+    font-size: 115%;
+    color: 	hwb(213 57% 17%);
+    padding: 1.5%;
+    list-style: none;
+}
+#contact_data_wrap a {
+    opacity: 70%;
+}
+#contact_data_wrap h3 {                                         /** Headings **/
+    color: #c9d8ea;
+}
+#contact_data_wrap h4 {                                         
+    color: #c9d8ea;
+    font-weight: bolder;
+}
+.follow_wrap ul {                                               /** Daten im Feld "Follow me"**/
+    list-style: none;
+}
+.email_wrap fieldset{                                           /** Daten im Formularfeld"**/
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5em;
+    margin-left: -15em;
+}
+.email_wrap #text_wrap {             
+    display: flex;
+    flex-flow: column wrap;
+}
+.email_wrap fieldset, input {                                   /** Abstand zwischen den Formularfeldern **/
+    border: none;
+    padding: 0 4% 3% 5%;
+}
+.email_wrap label {
+    margin-left: -10em;
+}
+#text_wrap textarea{                                            /** Formularfeld: Texbereich **/
+    padding-bottom: 10%;
+    margin-left: 17em;
+}
+fieldset [type=submit] {                                        /** Formularfeld: Submit **/
+    padding: 1em;
+    margin: 2em 0 0 42em;
+}
+#first_name, #phone_number, #email, #message_text {             /** Formularfelder: runde Ecken; lieber em-Einheit benutzen! **/
+    border-radius: 0.5em;
+}
+
+/*------------------------ Footer -----------------------*/
+footer{
+    background-color: var(--dark-blue-background);
+    width: 100vw;                                               /** footer: Raum **/
+    height: 10vh;
+}
+footer p { 
+    margin: 0;                                                  /** kein Abstand zwischen Main/Footer **/
+    text-align: center;
+    font-size: 1rem;
+}

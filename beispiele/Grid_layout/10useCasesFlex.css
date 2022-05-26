@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before{
+	box-sizing: border-box;
+}
+
+:root{
+	font-family: sans-serif;
+	font-size: 1rem;
+}
+
+h1{
+	font-size: 1.5rem;
+}
+
+div>div{
+	background: hsla(0,0%,80%,1);
+	margin: 1%;
+	padding: 1%;
+	text-align: center;
+}
+
+/*responsive design ohne media query
+mit display: flex*/
+/*responsive: wrap muß erlaubt sein*/
+
+/* flex container */
+#flexRWD{
+	display: flex;
+	/* Festlegung der Achsen und des Umbruchs */
+	flex-flow: row wrap;
+	/* Ausrichtung an der Hauptachse */
+	justify-content: center;
+	/* Ausrichtung an der Nebenachse */
+	align-items: flex-start;
+
+
+	/* Container vergrößern, um die Ausrichtung an der Nebenachse zu sehen. */
+	height: 30vh; 
+	/* align-content greift nur bei mehrzeiligen Containern.
+	Es wird notiert, wenn der Container größer ist
+	als die Inhalte und die mehrzeiligen Inhalte als Gesamtpaket 
+	im Container platziert werden sollen. */
+}
+
+/* flex items */
+#flexRWD div{
+	flex: 0 1 20em;
+} 
+
+
+/*******************************/
+ #sidebar{
+	display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#sidebar div:last-of-type{
+    flex: 1 1 20em;
+}
+
+/*footer immer unten, auch wenn nur wenig content da ist*/
+/* flex container */
+#verticalStackFlex{
+	height: 50vh;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: stretch;
+}
+
+/* flex items */
+#verticalStackFlex>div:nth-last-of-type(2){
+	flex: 1 0 auto;
+	display: flex;
+	flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center; 
+	
+} 
+
+/*******************************/
+/* responsive cards */
+
+/* flex container */
+#card{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+} 
+
+/* flex items */
+#card>div{ 
+	flex: 0 1 20em;
+
+	/* Ausrichtung der Inhalte */
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+} 
+
+#card>div>div{
+	background-color: hsla(0,0%,95%,1);
+    flex: 0 0 5em;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

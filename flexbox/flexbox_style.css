@@ -63,8 +63,7 @@ nav a:hover{                        /** hover **/
 main {
     width: 100vw;
     height: 90vh;
-    background: linear-gradient(90deg, #22c1c3, #fdbb2d);
-    /**background-color: var(--blue-main);**/
+    background-color: var(--blue-main);
 }
 /*------------------------ Footer -----------------------*/
 footer{
