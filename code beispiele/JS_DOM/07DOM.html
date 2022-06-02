@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<title>HTMl, CSS und js</title>
+		<link rel="stylesheet" href="07DOM.css">
+		<script src="07DOM.js" async defer></script>
+	</head>
+	<body>
+		<h1 class="head-line">js und das DOM</h1>
+		<article>
+			<h2 class="head-line">DOM (Document Object Model)</h2>
+			<p>Ein HTML-Dokument ist hierarchisch, wie eine Baumstruktur, aus vielen Knoten aufgebaut. Der oberste oder Wurzelknoten ist das Dokument selbst, das document.</p>
+			<p>Mit js kann man auf das DOM zugreifen, es auslesen, Knoten löschen, ändern oder hinzufügen.</p>
+		</article>
+		<article>
+			<h2 class="head-line">Beispiel Knoten</h2>
+			<figure>
+				<img src="sonne.png" alt="Die Sonne :-)">
+				<figcaption>Deine Laune zählt!</figcaption>
+			</figure>
+			<form>
+				<label for="fn">Dein Name bitte!</label>
+				<input type="text" id="fn" required minlength="3">
+				<label for="spiel">Dein Spiel bitte!</label>
+				<input type="text" id="spiel">
+				<fieldset>
+					<legend>Wie ist Deine Stimmung?</legend>
+					<label for="good">Super!</label>
+					<input type="radio" id="good" value="g" name="mood">
+					<label for="bad">Geht so.</label>
+					<input type="radio" id="bad" value="b" name="mood">
+				</fieldset>
+				<input type="reset">
+				<input type="submit">
+			</form>
+		</article>
+	</body>
+</html>

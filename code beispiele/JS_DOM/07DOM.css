@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before{
+	box-sizing: border-box;
+}
+
+:root{
+	font-family: sans-serif;
+	font-size: 1rem;
+}
+
+body{
+	width: 90%;
+	margin: auto;
+}
+
+.head-line{
+	text-decoration: underline;
+}
+
+article{
+	background: hsla(235,100%,91%,1);
+	padding: 2%;
+}
+
+figure{
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	border: 1px dashed hsl(240, 100%, 50%);
+}
+
+img{
+	max-width: 50%;
+	display: block;
+	margin: auto;
+}
+
+
+form{
+	margin: 2%;
+	text-align: center;
+}
+
+input{
+	display: block;
+	margin: 1% auto;
+}
+
+/* Klassen für die Verwendung in js */
