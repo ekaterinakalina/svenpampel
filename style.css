@@ -25,7 +25,6 @@ header {
 /*--------------------- Einzelne Artikel, Footer ---------------------*/
 #about, #services, #contact_data_wrap, article, footer { 
     padding: 2.5rem;
-    text-align: center;
 }
 
 /*-- Dasselbe wie "main > section:nth-child(even){
@@ -60,6 +59,48 @@ p {
     font-size: 1.5rem;
     color: 	hsl(213, 44%, 70%)
 }
+
+/*------- "Leistungen": section #services: -------*/
+/** Container #services **/
+#services {   
+    display:flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/** Containers für untere und obere Reihen .row **/
+.row {
+    display: flex;
+    width: 100%;
+}
+/** Weite der Boxen weniger machen **/
+.row div {
+    width: 50%;
+}
+
+/** Boxen .col: background-colour **/
+.col_1 { 
+    background-color: rgb(18, 142, 184);
+}
+.col_2 { 
+    background-color: rgb(85, 4, 19);
+}
+.col_3 { 
+    background-color: rgb(255, 249, 196);
+}
+.col_4 { 
+    background-color: rgb(13, 122, 25);
+}
+/** Boxen .col: styling **/
+.col_1, .col_2, .col_3, .col_4 {
+    display: flex;
+    flex-wrap:wrap;
+    margin: 1%;
+    padding: 3%;
+    border-radius: 1.5em;
+}
+
+
 /*----------------------- Navigation -----------------------*/
 nav {
     padding-top: 1.5rem;
@@ -79,7 +120,7 @@ ul li {
     list-style: none;
 }
 ul i {
-    margin-left: -2em;                              /** zentriert icons **/
+    margin-left: -2em; /** zentriert icons **/
 }
 /*------------------------ Buttons -----------------------*/
 [type=submit],[type=button]{ /*** Buttons allgemein ***/
@@ -90,11 +131,11 @@ ul i {
     border-radius: 4%;
     font-size: 1rem;
 }
-fieldset [type=submit] {                            /** Formular Submit **/
+fieldset [type=submit] { /** Formular Submit **/
     padding: 1em;
     margin: 2em 0 0 42em;
 }
-#button_kontakt,#button_portfolio, #button_cv {     /** Hire me, Portfolio, CV **/
+#button_kontakt,#button_portfolio, #button_cv { /** Hire me, Portfolio, CV **/
     position: relative;
     padding: 0 0 0 0;
     width: 13%;
@@ -102,28 +143,28 @@ fieldset [type=submit] {                            /** Formular Submit **/
     margin: 2% 0 3% 0%;
 }
 /*--------------------- Formularfeld ---------------------*/
-#contact_data_wrap {                                /** Kontaktdaten **/
-    text-align: center;                             /** zentriert den Formulartext **/
+#contact_data_wrap {    /** Kontaktdaten **/
+    text-align: center; /** zentriert den Formulartext **/
 }
 #contact_data_wrap li {
     font-size: 115%;
     color: 	hsl(213, 44%, 70%);
     padding: 1.5%;
 }
-#contact_data_wrap li.social_network {              /** Social Networks **/
-    display: inline;                                /** in der Reihe anzeigen **/  
+#contact_data_wrap li.social_network {  /** Social Networks **/
+    display: inline;                    /** in der Reihe anzeigen **/  
 }
 #contact_data_wrap a {
     opacity: 70%;
 }
-#contact_data_wrap h3 {                             /** Headings **/
+#contact_data_wrap h3 {  /** Headings **/
     color: #c9d8ea;
 }
-#contact_data_wrap h4 {                             /** Headings **/
+#contact_data_wrap h4 {  /** Headings **/
     color: #c9d8ea;
     font-weight: bolder;
 }
-fieldset, label, input {                            /** Abstand zwischen den Formularfeldern **/
+fieldset, label, input {  /** Abstand zwischen den Formularfeldern **/
     display:inline-block;
     position:relative;
     border: none;
@@ -136,9 +177,6 @@ textarea {
 /*-------------------------- Bild -------------------------*/
 figure {
     align-items: center;
-    border: 2px hsl(28, 40%, 50%) solid;
-    padding: 0 0 0 0;
-    margin: 0 62% 0 0;
     max-width: fit-content;
 }
 figure img{
