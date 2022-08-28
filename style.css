@@ -50,6 +50,7 @@ h2 {
     font-size: 4rem;
     letter-spacing: 0.1em;
 }
+/** Lines after h2 headings **/
 h2:after{
     content:' ';
     display: block;
