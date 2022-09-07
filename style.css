@@ -3,28 +3,51 @@
     box-sizing: border-box; 
 }
 /*--------------------- Wurzeleinstellungen: globale Variablen ---------------------*/
+/*Grundeinstellungen: Farben, Fonts*/
 :root {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
+    --color-white: hsl(0, 0%, 100%);
+    --color-light-blue-text: hsl(213, 44%, 85%);
+    --color-light-green-input: hsl(164, 55%, 88%);
+    --color-green: hsla(164, 100%, 39%, 0.4);
+    --color-green-hover: hsla(164, 73%, 57%, 0.612);
+    --color-blue-background1: hsl(213, 91%, 26%);
+    --color-blue-background2: hsla(213, 91%, 34%, 0.378);
+    --color-blue-navbar: hsl(227, 98%, 19%);
+    --color-blue-light: hsl(213, 44%, 70%);
+    --color-orange-underline: hsla(22, 100%, 50%, 0.777);
+    --color-orange-button:hsla(22, 100%, 55%, 0.937);
 }
 /*--------------------- Body: Styles ---------------------*/
 body {
-	background-color: #035BC5;
-    color: #c9d8ea;
+	background-color:var(--color-blue-background1);
+    color: #d0ddee;
     margin: 0;
+    /*max-width?*/
 }
-main > section:nth-child(even){                     /**<section> haben verschiedene Farben**/
-    background-color: 	hsl(213, 97%, 35%);
+
+/*------------------------------- Header ------------------------------*/
+header figure {
+    margin-bottom: 4rem;
+    padding-left: 5rem;
 }
-/*------------------------- Header -----------------------*/
-header {
-    padding-top: 4rem;
-    padding-left: 12rem;
+#header_text {
+    text-align: left;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
 }
-/*--------------------- Einzelne Artikel, Footer ---------------------*/
+#header_text h3 {
+    line-height: 1.5em;
+}
+header input {
+    margin-left: -3rem;
+}
+
+/*--------------------- Einzelne Artikel, Footer ----------------------*/
 #about, #services, #contact, article, footer { 
-    padding: 2.5rem;
+    padding: 2rem;
 }
 
 /*-- Dasselbe wie "main > section:nth-child(even){
@@ -35,155 +58,258 @@ header {
     padding: 2.5rem;
 }--*/
 
-footer{
-    background-color: hsl(213, 97%, 35%);
+/*---------------------- Layoutregeln für Containers -------------------*/
+header,
+#services, 
+#portfolio,
+#form_container,
+footer {
+    display:flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
 }
-footer p { 
-    font-size: 1rem;
+
+/*------------------------------ Colors --------------------------------*/
+/**Jedes gerades <section>-Element hat eine dunklere Farbe**/
+main > section:nth-child(even){                     
+    background-color: var(--color-blue-background2);
 }
-/*--------------------- Headings, Text ---------------------*/
-h1 {
-    font-size: 7rem;
-    line-height: 1;
+
+/*Headings color*/
+h1, h2, h3 { color: var(--color-light-blue-text);}
+
+/*Headings h2 underline*/
+h2:after { background-color: var(--color-orange-underline);}
+
+/*Text color*/
+p { color: var(--color-light-blue-text);}
+
+/*Form data backround and border color*/
+#results pre {
+    background: var(--color-lightest);
+    border: 1px solid var(--color-light-blue-text);
 }
+
+/*Services background color*/
+.col { background-color: var(--color-green);}
+
+/*Contact links color*/
+#contact li { color: var(--color-blue-light);}
+
+/*Form label text color*/
+#form_container label {
+    color: var(--color-light-blue-text);
+}
+/*Form: top and bottom lines */
+#form_field form {
+    border-top: 3px solid var(--color-green);
+    border-bottom: 3px solid var(--color-orange-underline);
+}
+
+/** Footer background color **/
+footer { background-color: var(--color-blue-background1);}
+
+/*----------------------------- Buttons ------------------------------*/
+/** Grundeinstellungen: Buttons **/
+[type=button],
+[type=submit] { 
+     /** Mit !important werden Attribute aller buttons nicht überschrieben **/
+    background-color: var(--color-orange-button) !important; 
+    /** Button color eben **/
+    border-color: var(--color-orange-button);
+    border: var(--color-orange-button);
+    border-radius: 0.5em;
+    color: #1c1d1e;
+    font-size: 100%;
+    width: 7em;
+    height: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+[type=button]:hover,
+[type=submit]:hover{
+    background-color: var(--color-green) !important;
+    color: var(--color-light-green-input);
+    box-shadow: 7px 10px 20px -8px hsla(213, 88%, 16%, 0.691);
+}
+
+/*--------------------------- Headings, Text -------------------------*/
+/* Headings h1 und h2 in Relation zu einander */
+h1,
 h2 {
-    font-size: 4rem;
-    letter-spacing: 0.1em;
+  font-size: 250%;
+  line-height: 1.1;
 }
-/** Lines after h2 headings **/
-h2:after{
+h1 {
+    font-size: 340%;
+  }
+/** Lines nach den h2 headings **/
+h2::after {
     content:' ';
     display: block;
+    position: relative;
     width: 2.5em;
     height: 0.1em;
-    background-color: hsla(22, 100%, 50%, 0.767);
     border-radius: 1em;
+    background-color: var(--color-orange-underline);
+    /** Linien sind unter der Navbar beim Scrollen **/
+    z-index: -1;
 }
 h3 {
     font-size: 2rem;
     font-weight: bold;
     line-height: 0.5;
 }
+#about h2, p, form{
+    padding-left: 3rem;
+}
 p {
-    font-size: 1.5rem;
-    color: 	hsl(213, 44%, 70%)
+    margin-top: 0.5rem;
+    font-size: 130%;
 }
-
-/*------- "Leistungen": section #services: -------*/
-/** Container #services **/
-#services {   
-    display:flex;
-    flex-flow: wrap;
-    justify-content: center;
-    align-items: center;
+footer p { 
+    font-size: 80%;
+    padding-right: 5rem;
 }
+#results pre {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    overflow-x: scroll;
+    border-radius: 0.3em;
+}
+.input-group {
+    margin-top: 0.25rem;
+    padding: 0.5rem 1rem;
+}  
+#form_container form {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 1rem 0 2rem;
+    overflow: hidden;
+}
+/*------------------------- "Leistungen": ----------------------*/
 /** Containers für untere und obere Reihen .row **/
-.row {
+#services .row {
     display: flex;
     width: 100%;
+    padding-top: 3rem;
 }
-/** Weite der Boxen weniger machen **/
-.row div {
-    width: 50%;
+/** Mindert Weite der Reihen, macht sie eben unter einander **/
+#services .row div {
+    width: 50%;  
 }
+#services .row h3 {
+    line-height: 3rem;
+} 
 /** Boxen .col: styling **/
 .col { 
-    background-color: hsla(164, 100%, 39%, 0.4);
-    color: #ffffff;
     display: flex;
     flex-wrap:wrap;
     margin: 1%;
-    padding: 3%;
+    padding: 4%;
     border-radius: 1.5em;
-    box-shadow: 7px 10px 20px -8px hsl(233, 99%, 32%);
-}
-.col p {
-    color: #ffffff;
+    box-shadow: 7px 10px 20px -8px hsla(213, 88%, 16%, 0.691);
 }
 .col:hover {
-    background-color: hsl(164, 61%, 58%, 0.5);
+    background-color: var(--color-green-hover);
 }
-/*----------------------- Navigation -----------------------*/
+/*--------------- "Portfolio": section #portfolio: ---------------*/
+
+
+/*-------------------------- Navigation --------------------------*/
+/** Navbar Grundeinstellungen **/
 nav {
-    padding-top: 1.5rem;
-    padding-right: 5rem;
-    text-align: right;
+    padding-left: 5rem;
+    max-height: 6rem;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: +1;
 }
+/** Navbar Links Container **/
+nav ul {
+    display: flex;
+    flex-flow: row wrap; 
+    align-content: space-around;  
+}
+/** Abstand zwischen nav links **/
 nav li {
     display: inline;
-    padding: 1.5rem;
+    list-style: none;
+    padding: 3.5rem;
 }
-a{
+/** Links Navbar **/
+a {
     text-decoration: none;   
     font-size: 1.2rem;
+    position: relative;
     color: #f6faff;
 }
-ul li {
-    list-style: none;
+/** Links underline hover animation **/
+a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.2em;
+    border-radius: 1em;
+    background-color: var(--color-orange-button);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s ease-in-out;
 }
-ul i {
-    margin-left: -2em; /** zentriert icons **/
+a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
 }
-/*------------------------ Buttons -----------------------*/
-[type=submit],[type=button]{ /*** Buttons allgemein ***/
-    display: inline-block;
-    background-color: hsl(28, 100%, 50%) !important;
-    color:#f6faff;
-    font-weight: bold;
-    border-radius: 4%;
-    font-size: 1rem;
+/** Navbar Animation: Sticky Navbar 
+    verändert die Farbe beim Scrollen **/
+.navbar.scrolled {
+    background-color: var(--color-blue-navbar) !important;
+    transition: background-color 200ms linear;
+    box-shadow: 0px 10px 8px -7px hsla(253, 100%, 2%, 0.382);
 }
-fieldset [type=submit] { /** Formular Submit **/
-    padding: 1em;
-    margin: 2em 0 0 42em;
+/*------------------------ Formularfeld ------------------------*/
+#form_container label {
+    display: inline;
+    font-family: Lato, sans-serif;
+    font-size: 100%;
+    line-height: 2.3rem;
+  }
+#form_container input, select, textarea {
+    background-color: var(--color-light-green-input);
+    border-radius: 0.2em;
+    border: var(--color-light-green-input);
+  }
+#form_container #social {
+    padding-top: 3.5rem;
+} 
+/** Formular "Nachricht" nach unten schieben: 
+bleibt auf einer Linie mit "Kontakt"**/
+#form_field {
+    padding-top: 7rem;
 }
-#button_kontakt,#button_portfolio, #button_cv { /** Hire me, Portfolio, CV **/
-    position: relative;
-    padding: 0 0 0 0;
-    width: 13%;
-    height: 3em;
-    margin: 2% 0 3% 0%;
+  
+#form_field [type="submit"]{
+    margin-top: 1.5rem;
 }
-/*--------------------- Formularfeld ---------------------*/
-#contact {    /** Kontaktdaten **/
-    text-align: center; /** zentriert den Formulartext **/
-}
+/** Kontaktdaten **/
 #contact li {
-    font-size: 115%;
-    color: 	hsl(213, 44%, 70%);
-    padding: 1.5%;
+    font-size: 120%;
+    padding: 0.8rem;
 }
-#contact li.social_network {  /** Social Networks **/
-    display: inline;                    /** in der Reihe anzeigen **/  
+/** Social Networks in der Reihe anzeigen **/ 
+#contact li.social_network{  
+    display: inline-flex; 
+/** shafft Abstand zwischen den Icons, gruppiert nach rechts**/  
+    padding-right: 2.5rem;     
 }
-#contact a {
-    opacity: 70%;
-}
-#contact h3 {  /** Headings **/
-    color: #c9d8ea;
-}
-#contact h4 {  /** Headings **/
-    color: #c9d8ea;
-    font-weight: bolder;
-}
-fieldset, label, input {  /** Abstand zwischen den Formularfeldern **/
-    display:inline-block;
-    position:relative;
-    border: none;
-    margin: 0 0 2em 38em;
-    padding: 0 1% 1% 5%;
-}
-textarea {
-    margin-left: 37em;
-}
+
 /*-------------------------- Bild -------------------------*/
-figure {
-    align-items: center;
-    max-width: fit-content;
-}
-figure img{
-    padding: 20% 0 0 2%;
-}
+
 
 
 
