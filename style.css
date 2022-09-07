@@ -226,6 +226,7 @@ nav {
     text-align: left;
     position: sticky;
     top: 0;
+    /** Navbar als erste im Stack von Elementen **/
     z-index: +1;
 }
 /** Navbar Links Container **/
